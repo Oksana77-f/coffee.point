@@ -1,0 +1,174 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Coffee Point</title> 
+    <link rel="stylesheet" href="style-menu.css"> 
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap'); 
+    </style> 
+</head> 
+ 
+<body> 
+    <header> 
+        <div class="logo"> 
+            <img src="logo.png" class="my-image" alt="Логотип Coffee Point"> 
+            <h1 class="logo-text">Coffee Point</h1> 
+        </div> 
+        <nav> 
+            <ul> 
+                <li><a href="C:\Users\Оксана\Desktop\сайт\index.html.html">Главная</a></li> 
+                <li><a href="C:\Users\Оксана\Desktop\сайт\about.html">О нас</a></li> 
+                <li><a href="C:\Users\Оксана\Desktop\сайт\menu.html">Меню</a></li> 
+                <li><a href="C:\Users\Оксана\Desktop\сайт\contacts3.html">Контакты</a></li> 
+                <li><a href="C:\Users\Оксана\Desktop\сайт\reserv3.html">Резервирование</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <div class="name"><h1 class="text">НОВИНКИ</h1></div>
+    <div class="slide-container">
+        <div class="slides">
+            <img src="ccc.png" class="active">
+            <img src="сс.png">
+            <img src="с.png">
+        </div>
+    
+        <div class="buttons">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+    
+        <div class="dotsContainer">
+            <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+            <div class="dot" attr='1' onclick="switchImage(this)"></div>
+            <div class="dot" attr='2' onclick="switchImage(this)"></div>
+            <div class="dot" attr='3' onclick="switchImage(this)"></div>
+             <div class="dot" attr='4' onclick="switchImage(this)"></div>
+        </div>
+    
+    </div>
+    <div class="name"><h1 class="text">АКЦИИ</h1></div>
+    <div class="slide-container">
+	
+        <div class="slides">
+            <img src="e.png" class="active">
+            <img src="ee.png">
+            <img src="eee.png">
+        </div>
+    
+        <div class="buttons">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+    
+        <div class="dotsContainer">
+            <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+            <div class="dot" attr='1' onclick="switchImage(this)"></div>
+            <div class="dot" attr='2' onclick="switchImage(this)"></div>
+            <div class="dot" attr='3' onclick="switchImage(this)"></div>
+            <div class="dot" attr='4' onclick="switchImage(this)"></div>
+        </div>
+    
+    </div>
+    <div class="name"><h1 class="text">КОФЕ</h1></div>
+    <div class="slide-container">
+	
+        <div class="slides">
+            <img src="t.png" class="active">
+            <img src="tt.png">
+            <img src="ttt.png">
+            <img src="tttt.png">
+            <img src="ttttt.png">
+            <img src="tttttt.png">
+        </div>
+    
+        <div class="buttons">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+    
+        <div class="dotsContainer">
+            <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+            <div class="dot" attr='1' onclick="switchImage(this)"></div>
+            <div class="dot" attr='2' onclick="switchImage(this)"></div>
+            <div class="dot" attr='3' onclick="switchImage(this)"></div>
+            <div class="dot" attr='4' onclick="switchImage(this)"></div>
+        </div>
+    
+    </div>
+    <div class="name"><h1 class="text">ДЕСЕРТЫ</h1></div>
+    <div class="slide-container">
+	
+        <div class="slides">
+            <img src="v.png" class="active">
+            <img src="vv.png">
+            <img src="vvv.png">
+            <img src="vvvv.png">
+            <img src="vvvvv.png">
+        </div>
+    
+        <div class="buttons">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+    
+        <div class="dotsContainer">
+            <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+            <div class="dot" attr='1' onclick="switchImage(this)"></div>
+            <div class="dot" attr='2' onclick="switchImage(this)"></div>
+            <div class="dot" attr='3' onclick="switchImage(this)"></div>
+            <div class="dot" attr='4' onclick="switchImage(this)"></div>
+        </div>
+    
+    </div>
+    <footer> 
+        <ul> 
+            <li><a href="#">facebook</a></li> 
+            <li><a href="#">VKontakte</a></li> 
+            <li><a href="#">instagram</a></li> 
+        </ul> 
+    </footer> 
+    <script type="text/javascript"> 
+let slideContainers = document.querySelectorAll('.slide-container');
+slideContainers.forEach(function(container) {
+    let slideImages = container.querySelectorAll('img');
+    let next = container.querySelector('.next');
+    let prev = container.querySelector('.prev');
+    let dots = container.querySelectorAll('.dot');
+    let counter = 0;
+    next.addEventListener('click', function() {
+        slideNext(slideImages, dots);
+    });
+    prev.addEventListener('click', function() {
+        slidePrev(slideImages, dots);
+    });
+    function slideNext(slideImages, dots) {
+        slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+        if (counter >= slideImages.length - 1) {
+            counter = 0;
+        } else {
+            counter++;
+        }
+        slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+        updateIndicators(dots);
+    }
+    function slidePrev(slideImages, dots) {
+        slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+        if (counter == 0) {
+            counter = slideImages.length - 1;
+        } else {
+            counter--;
+        }
+        slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+        updateIndicators(dots);
+    }
+    function updateIndicators(dots) {
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[counter].classList.add('active');
+    }
+});
+    </script>
+</body> 
+ 
+</html>
