@@ -1,2 +1,2 @@
 # coffee.point
-my_sate
+my_site
